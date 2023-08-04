@@ -4,9 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
-import static Level.FilterLevel.DAYS;
-import static Level.FilterLevel.MONTHS;
-import static Level.FilterLevel.QUARTERS;
+import static level.FilterLevel.DAYS;
+import static level.FilterLevel.MONTHS;
+import static level.FilterLevel.QUARTERS;
 
 @Data
 public class DataRange {

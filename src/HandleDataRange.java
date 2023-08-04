@@ -1,4 +1,4 @@
-import Level.OffsetLevel;
+import level.OffsetLevel;
 import factory.DateRangeStrategyFactory;
 import model.DataRange;
 import strategy.DateRangeStrategy;

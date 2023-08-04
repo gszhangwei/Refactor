@@ -1,6 +1,6 @@
 package factory;
 
-import Level.OffsetLevel;
+import level.OffsetLevel;
 import strategy.DailyOffsetDateRangeStrategy;
 import strategy.DateRangeStrategy;
 import strategy.MonthlyOffsetDateRangeStrategy;

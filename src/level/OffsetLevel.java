@@ -1,4 +1,4 @@
-package Level;
+package level;
 
 public enum OffsetLevel {
     YEARLY_OFFSET("year"),
