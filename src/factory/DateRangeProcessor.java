@@ -21,16 +21,16 @@ public class DateRangeProcessor {
     public void handleDateRange(OffsetLevel offsetLevel, Date startDatetime, int offsetValue, Date endDatetime, int filterLevel, int funcLevel, Date selectedDate, int startDateMonthAfterOffset) {
         switch (offsetLevel) {
             case YEARLY_OFFSET:
-                yearlyOffsetDateRange.handleYearlyOffsetDateRange(startDatetime, offsetValue, endDatetime);
+                yearlyOffsetDateRange.offset(startDatetime, offsetValue, endDatetime);
                 break;
             case QUARTERLY_OFFSET:
-                quarterlyOffsetDateRange.handleQuarterlyOffsetDateRange(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime);
+                quarterlyOffsetDateRange.offset(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime);
                 break;
             case MONTHLY_OFFSET:
-                monthlyOffsetDateRange.handleMonthlyOffsetDateRange(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime, startDateMonthAfterOffset);
+                monthlyOffsetDateRange.offset(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime, startDateMonthAfterOffset);
                 break;
             case DAILY_OFFSET:
-                dailyOffsetDateRange.handleDailyOffsetDateRange(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime, startDateMonthAfterOffset);
+                dailyOffsetDateRange.offset(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime, startDateMonthAfterOffset);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid offset level");
