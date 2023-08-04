@@ -1,41 +1,29 @@
 package factory;
 
 import Level.OffsetLevel;
-import model.DailyOffsetDateRange;
-import model.MonthlyOffsetDateRange;
-import model.QuarterlyOffsetDateRange;
-import model.YearlyOffsetDateRange;
+import model.DailyDateRange;
+import model.MonthlyDateRange;
+import model.DateRange;
+import model.QuarterlyDateRange;
+import model.YearlyDateRange;
 
 import java.util.Date;
 
 public class DateRangeProcessor {
 
-    private YearlyOffsetDateRange yearlyOffsetDateRange = new YearlyOffsetDateRange();
-
-    private QuarterlyOffsetDateRange quarterlyOffsetDateRange = new QuarterlyOffsetDateRange();
-
-    private MonthlyOffsetDateRange monthlyOffsetDateRange = new MonthlyOffsetDateRange();
-
-    private DailyOffsetDateRange dailyOffsetDateRange = new DailyOffsetDateRange();
-
-    public void handleDateRange(OffsetLevel offsetLevel, Date startDatetime, int offsetValue, Date endDatetime, int filterLevel, int funcLevel, Date selectedDate, int startDateMonthAfterOffset) {
+    public static DateRange getDateRange(OffsetLevel offsetLevel, Date startDatetime, int offsetValue, Date endDatetime, int filterLevel, String funcLevel, Date selectedDate, int startDateMonthAfterOffset) {
         switch (offsetLevel) {
             case YEARLY_OFFSET:
-                yearlyOffsetDateRange.offset(startDatetime, offsetValue, endDatetime);
-                break;
+                return new YearlyDateRange(startDatetime, offsetValue, endDatetime);
             case QUARTERLY_OFFSET:
-                quarterlyOffsetDateRange.offset(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime);
-                break;
+                return new QuarterlyDateRange(startDatetime, offsetValue, endDatetime, filterLevel, funcLevel, selectedDate);
             case MONTHLY_OFFSET:
-                monthlyOffsetDateRange.offset(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime, startDateMonthAfterOffset);
-                break;
+                return new MonthlyDateRange(startDatetime, offsetValue, endDatetime, filterLevel, funcLevel, selectedDate, startDateMonthAfterOffset);
             case DAILY_OFFSET:
-                dailyOffsetDateRange.offset(filterLevel, endDatetime, offsetValue, funcLevel, selectedDate, startDatetime, startDateMonthAfterOffset);
-                break;
+                return new DailyDateRange(startDatetime, offsetValue, endDatetime, filterLevel, funcLevel, selectedDate, startDateMonthAfterOffset);
             default:
                 throw new IllegalArgumentException("Invalid offset level");
         }
     }
-
 
 }
