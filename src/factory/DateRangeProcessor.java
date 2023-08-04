@@ -1,6 +1,7 @@
 package factory;
 
-import Level.OffsetLevel;
+
+import level.OffsetLevel;
 import model.DailyDateRange;
 import model.MonthlyDateRange;
 import model.DateRange;
