@@ -6,6 +6,6 @@ import strategy.DateRangeStrategy;
 public class HandleDataRange {
     public void handleDataRange(DataRange dataRange, String offsetLevel) {
         DateRangeStrategy dateRangeStrategy = DateRangeStrategyFactory.getDateRangeStrategy(OffsetLevel.fromString(offsetLevel));
-        dateRangeStrategy.handleDateRange(dataRange);
+        dateRangeStrategy.offset(dataRange);
     }
 }

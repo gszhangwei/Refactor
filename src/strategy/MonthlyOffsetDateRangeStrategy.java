@@ -4,7 +4,7 @@ import model.DataRange;
 
 public class MonthlyOffsetDateRangeStrategy implements DateRangeStrategy{
     @Override
-    public void handleDateRange(DataRange dataRange) {
+    public void offset(DataRange dataRange) {
         dataRange.setOffsetForMonthlyDateRange();
     }
 }

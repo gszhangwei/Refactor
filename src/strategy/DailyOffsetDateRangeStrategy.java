@@ -5,7 +5,7 @@ import strategy.DateRangeStrategy;
 
 public class DailyOffsetDateRangeStrategy implements DateRangeStrategy {
     @Override
-    public void handleDateRange(DataRange dataRange) {
+    public void offset(DataRange dataRange) {
 
     }
 }
